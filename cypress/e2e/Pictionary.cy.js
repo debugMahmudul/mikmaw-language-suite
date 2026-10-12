@@ -2,7 +2,7 @@ describe("Mi'kmaw Pictionary", () => {
 
     beforeEach(() => {
         cy.viewport(1280, 720);
-        cy.visit("http://localhost:3421/Mi-kmaq-Language-Learning-App");
+        cy.visit("http://localhost:3421/mikmaw-language-suite");
         cy.contains("Play", { matchCase: false }).click({ force: true });
         cy.get("div.cursor-pointer").first().click();
         cy.contains("English").click();

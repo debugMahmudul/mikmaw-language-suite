@@ -25,7 +25,7 @@ describe('Tests the dictionairy module of the Pictionairy game', { scrollBehavio
     ];
 
     beforeEach(() => {
-        cy.visit('http://localhost:3421/Mi-kmaq-Language-Learning-App');
+        cy.visit('http://localhost:3421/mikmaw-language-suite');
     });
 
     it('Tests Pictionary (English + French)', () => {

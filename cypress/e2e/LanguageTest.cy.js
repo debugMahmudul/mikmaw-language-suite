@@ -2,7 +2,7 @@ describe('Language Switch Tests', () => {
 
     beforeEach(() => {
         // Visit your homepage
-        cy.visit('http://localhost:3421/Mi-kmaq-Language-Learning-App')
+        cy.visit('http://localhost:3421/mikmaw-language-suite')
     });
 
     it('Tests Pictionary (English + French)', () => {

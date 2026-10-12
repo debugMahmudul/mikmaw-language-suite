@@ -1,6 +1,6 @@
 describe('Title Page E2E Test', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:3421/Mi-kmaq-Language-Learning-App');
+    cy.visit('http://localhost:3421/mikmaw-language-suite');
   });
 
   it('should navigate from title to game selection', () => {

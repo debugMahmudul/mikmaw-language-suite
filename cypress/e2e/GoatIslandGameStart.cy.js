@@ -1,7 +1,7 @@
 describe('Testing game starts, user ansers questions correctly, game pauses after 3 questions', () => {
     beforeEach('Loads website, then navigates to Goat Island Game', () => {
         cy.viewport(1280, 720)
-        cy.visit('http://localhost:3421/Mi-kmaq-Language-Learning-App')
+        cy.visit('http://localhost:3421/mikmaw-language-suite')
         cy.get('[data-cy="Play"]').should('be.visible');
         cy.get('[data-cy="Play"]').click();
         cy.get('[data-cy="select-goat-island"]').should("be.visible");

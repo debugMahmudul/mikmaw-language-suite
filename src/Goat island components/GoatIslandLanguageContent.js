@@ -1,7 +1,7 @@
 /**
  * GoatIslandLanguageContent.js
  * 
- * Purpose: Provides English and French translations for all text in the Goat Island game
+ * Purpose: Provides English translations for all text in the Goat Island game
  * 
  * Author: Mark Louis Tabudlong A00468931
  */
@@ -70,69 +70,5 @@ export const GOAT_ISLAND_LANGUAGE = {
     
     // Dictionary component
     animalsOfIslandLabel: "Animals of the Island 🦌"
-  },
-  french: {
-    // StartGameScreen
-    howToPlay: "🏝️ Comment Jouer",
-    letsLearn: "Apprenons les animaux de l'île Eskasoni.",
-    dictionaryDescription: "Débloquez de nouveaux mots lorsque vous répondez correctement!",
-    hintsDescription: "Vous avez 3 indices.\nUtilisez-les judicieusement!",
-    learnWords: "Apprendre les Mots",
-    play: "Jouer",
-    
-    // GoatIslandGame
-    gameTitle: "Jeu de l'Île aux Chèvres d'Eskasoni",
-    clickLandmark: "Cliquez sur un repère pour jouer",
-    question: "Question",
-    
-    // Dictionary
-    islandDictionary: "Dictionnaire de l'Île",
-    animalsOfIsland: "Animaux de l'Île 🦌",
-    
-    // AnsweredCorrectly
-    correct: "Correct!",
-    unlockedWord: "Vous avez débloqué un nouveau mot!",
-    checkDictionary: "Voyez-le dans le dictionnaire",
-    nextQuestion: "Question Suivante",
-    
-    // IncorrectAnswer
-    incorrect: "Incorrect",
-    youHave: "Vous avez",  // NEW: Added this translation
-    attemptsRemaining: "tentative restante!",
-    getHint: "Obtenir un Indice",
-    tryAgain: "Réessayer",
-    
-    // HintsComponent
-    yourHint: "hi'lewei alo'tasit",  
-    yourHintEnglish: "(Your Hint)",   
-    hoverTranslation: "Survolez pour voir la traduction!",
-    hoverEnglish: "Survolez pour voir la traduction anglaise",
-    hintsRemaining: "Il vous reste {numHints} indices",
-    gotIt: "Compris",
-    
-    // NoMoreHintsComponents
-    noHintsRemaining: "Il vous reste 0 indices",
-    ohNo: "Oh non!",
-    
-    // GameOver
-    congratulations: "Félicitations",
-    gameOver: "Jeu Terminé",
-    answeredAllQuestions: "Vous avez répondu à toutes les questions",
-    ranOutAttempts: "Vous avez épuisé vos tentatives. Consultez le dictionnaire",
-    score: "Score",
-    playAgain: "Rejouer",
-    
-    // RandomAnimalFact
-    factLibraryUnlocked: "Bibliothèque de Faits Animaux Débloquée",
-    clickToView: "Vous avez débloqué un fait sur ces animaux! Cliquez pour voir.",
-    continueGame: "Continuer le Jeu",
-    
-    // AnimalFactDetail
-    animalFact: "Fait",
-    backToAnimals: "Retour aux Animaux",
-    continueGameFromFact: "Continuer le Jeu",
-    
-    // Dictionary component
-    animalsOfIslandLabel: "Animaux de l'Île 🦌"
   }
 };

@@ -2,7 +2,7 @@
  * DictionaryModal.js
  * 
  * Purpose: This component renders a modal displaying a grid of Mi'kmaq words alongside their
- *          English or French translations. Each word is represented on a flip card that, when clicked,
+ *          English translations. Each word is represented on a flip card that, when clicked,
  *          flips to reveal an associated image and plays a pronunciation audio.
  * 
  * Author: Tooba Javed (A00468904), Jan Zubalski, Mark Louis Tabudlong
@@ -19,17 +19,16 @@ import { words } from './WordBank';
  * 
  * Parameters:
  * - closeModal: A function that closes the modal when the "X" button is clicked.
- * - language: The selected language ('english' or 'french') for translations.
  */
-const DictionaryModal = ({ closeModal, language = 'english' }) => {
+const DictionaryModal = ({ closeModal}) => {
   
   // Map through the 'words' array to create a list of FlipCard components.
-  // Each FlipCard receives 'mikmaq' and the translation in the selected language.
+  // Each FlipCard receives 'mikmaq' and the translation in English.
   const flipCards = words.map((word, index) => (
     <FlipCard 
       key={index} 
       mikmaqWord={word.mikmaq} 
-      englishMeaning={language === 'french' ? word.french : word.english} 
+      englishMeaning={word.english} 
     />
   ));
 

@@ -13,7 +13,6 @@ import TitleImage from './images/title.jpeg';
 import TitleMobileImage from './images/title_mobile.png'; 
 
 function GameSelector({ onGameSelect }) {
-  const [selectedGame, setSelectedGame] = useState(null);
   const [showGameSelection, setShowGameSelection] = useState(false);
 
   const handlePlayClick = () => {
@@ -21,11 +20,7 @@ function GameSelector({ onGameSelect }) {
   };
 
   const handleGameSelect = (game) => {
-    setSelectedGame(game);
-  };
-
-  const handleLanguageSelect = (language, game) => {
-    onGameSelect(game, language);
+    onGameSelect(game, 'english');
   };
 
   // --- SCREEN 1: START SCREEN ---
@@ -94,29 +89,6 @@ function GameSelector({ onGameSelect }) {
                 style={{ backgroundImage: `url(${PictionaryImage})` }}
               />
             </div>
-
-            {/* Language Selection Popup */}
-            {selectedGame === 'translation' && (
-              <div className="mt-2 bg-amber-50/95 backdrop-blur rounded-2xl p-3 shadow-xl border-4 border-amber-800 w-48 sm:w-72 animate-fadeIn">
-                <h4 className="text-base sm:text-lg font-bold text-amber-900 mb-2 text-center font-sans">
-                  Choose Language
-                </h4>
-                <div className="flex justify-center gap-2">
-                  <button
-                    onClick={() => handleLanguageSelect('english', 'translation')}
-                    className="flex-1 bg-green-600 hover:bg-green-700 text-white font-bold py-1 px-2 sm:py-2 sm:px-4 rounded-xl shadow border-2 border-green-800 text-xs sm:text-sm transition-transform hover:scale-105"
-                  >
-                    English
-                  </button>
-                  <button
-                    onClick={() => handleLanguageSelect('french', 'translation')}
-                    className="flex-1 bg-amber-700 hover:bg-amber-800 text-white font-bold py-1 px-2 sm:py-2 sm:px-4 rounded-xl shadow border-2 border-amber-900 text-xs sm:text-sm transition-transform hover:scale-105"
-                  >
-                    French
-                  </button>
-                </div>
-              </div>
-            )}
           </div>
 
           {/* OPTION 2: Goat Island */}
@@ -131,29 +103,6 @@ function GameSelector({ onGameSelect }) {
                 style={{ backgroundImage: `url(${GoatIslandLogo})` }}
               />
             </div>
-
-            {/* Language Selection Popup */}
-            {selectedGame === 'goatIsland' && (
-              <div className="mt-2 bg-amber-50/95 backdrop-blur rounded-2xl p-3 shadow-xl border-4 border-amber-800 w-48 sm:w-72 animate-fadeIn">
-                <h4 className="text-base sm:text-lg font-bold text-amber-900 mb-2 text-center font-sans">
-                  Choose Language
-                </h4>
-                <div className="flex justify-center gap-2">
-                  <button data-cy="goat-island"
-                    onClick={() => handleLanguageSelect('english', 'goatIsland')}
-                    className="flex-1 bg-green-600 hover:bg-green-700 text-white font-bold py-1 px-2 sm:py-2 sm:px-4 rounded-xl shadow border-2 border-green-800 text-xs sm:text-sm transition-transform hover:scale-105"
-                  >
-                    English
-                  </button>
-                  <button
-                    onClick={() => handleLanguageSelect('french', 'goatIsland')}
-                    className="flex-1 bg-amber-700 hover:bg-amber-800 text-white font-bold py-1 px-2 sm:py-2 sm:px-4 rounded-xl shadow border-2 border-amber-900 text-xs sm:text-sm transition-transform hover:scale-105"
-                  >
-                    French
-                  </button>
-                </div>
-              </div>
-            )}
           </div>
 
         </div>

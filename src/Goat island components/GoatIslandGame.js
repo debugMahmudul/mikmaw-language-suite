@@ -47,8 +47,8 @@ function shuffleQuestions(array) {
     return shuffled;
 }
 
-const GoatIslandGame = ({ language = "english" }) => {
-    const content = GOAT_ISLAND_LANGUAGE[language] || GOAT_ISLAND_LANGUAGE.english;
+const GoatIslandGame = () => {
+    const content = GOAT_ISLAND_LANGUAGE.english;
 
     const [shuffledArray, setShuffledArray] = useState(() => shuffleQuestions(Questions));
     const [completedLandmarks, setCompletedLandmarks] = useState(new Array(Landmarks.length).fill(false));
@@ -192,7 +192,6 @@ const GoatIslandGame = ({ language = "english" }) => {
                     Close={() => setOpenFactModal(false)}
                     unlockedAnimals={showImage}
                     content={content}
-                    language={language}
                 />
             )}
 
@@ -202,7 +201,6 @@ const GoatIslandGame = ({ language = "english" }) => {
                     response={showImage}
                     CloseModal={() => setOpenDictionaryModal(false)}
                     content={content}
-                    language={language}
                 />
             )}
 
@@ -215,7 +213,6 @@ const GoatIslandGame = ({ language = "english" }) => {
                         score={score}
                         length={Landmarks.length}
                         content={content}
-                        language={language}
                     />
                 </div>
             ) : !gameStarted ? (
@@ -282,7 +279,6 @@ const GoatIslandGame = ({ language = "english" }) => {
                             response={showImage}
                             nextQuestion={handleCorrectAnswerContinue}
                             content={content}
-                            language={language}
                         />
                     )}
                     {/*INCORRECT ANSWER MODAL*/}
@@ -300,7 +296,6 @@ const GoatIslandGame = ({ language = "english" }) => {
                             question={activeQuestion}
                             numHints={numHints}
                             content={content}
-                            language={language}
                         />
                     )}
                     {/*NO HINTS REMAINING MODAL*/}

@@ -78,12 +78,11 @@ const Dictionary = ({CloseModal, response, content, language = "english"}) => {
                                         <img src={words.img} alt={words.name}
                                              className={'w-14 h-14 sm:w-16 sm:h-16 object-contain cursor-pointer hover:-translate-y-2 transition-transform'}
                                              onClick={() => toggleImage(idx)}/>
-                                        {/* Name Label - Show French or English based on language */}
                                         {showWord === idx && (
                                             <div className={'absolute -bottom-10 left-1/2 transform -translate-x-1/2 bg-[#fdf6e3] border-2 border-amber-800 rounded-lg px-2 py-1 z-50 w-max shadow-lg'}>
                                                 <p className={'text-sm text-amber-900'} style={{ fontFamily: '"Titan One", sans-serif' }}>{words.word}</p>
                                                 <p className={'text-xs text-amber-700 font-bold'}>
-                                                    {language === 'french' ? words.french : words.english}
+                                                    {words.english}
                                                 </p>
                                             </div>
                                         )}
@@ -101,12 +100,11 @@ const Dictionary = ({CloseModal, response, content, language = "english"}) => {
                                                     <img src={words.img} alt={words.name}
                                                          className={'w-14 h-14 sm:w-16 sm:h-16 object-contain cursor-pointer hover:-translate-y-2 transition-transform'}
                                                          onClick={() => toggleImage(index)}/>
-                                                    {/* Name Label - Show French or English based on language */}
                                                     {showWord === index && (
                                                         <div className={'absolute -bottom-10 left-1/2 transform -translate-x-1/2 bg-[#fdf6e3] border-2 border-amber-800 rounded-lg px-2 py-1 z-50 w-max shadow-lg'}>
                                                             <p className={'text-sm text-amber-900'} style={{ fontFamily: '"Titan One", sans-serif' }}>{words.word}</p>
                                                             <p className={'text-xs text-amber-700 font-bold'}>
-                                                                {language === 'french' ? words.french : words.english}
+                                                                {words.english}
                                                             </p>
                                                         </div>
                                                     )}

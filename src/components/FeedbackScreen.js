@@ -13,7 +13,7 @@ function FeedbackScreen({
   language = "english"
 }) {
   const [show, setShow] = useState(false);
-  const content = LANGUAGE_CONTENT[language] || LANGUAGE_CONTENT.english;
+  const content = LANGUAGE_CONTENT.english;
 
   useEffect(() => {
     setTimeout(() => setShow(true), 50);

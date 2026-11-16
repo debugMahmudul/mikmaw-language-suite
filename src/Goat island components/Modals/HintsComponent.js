@@ -56,7 +56,7 @@ const HintsComponent = ({close, question, numHints, content, language = "english
                         <p className={'text-6xl text-amber-950 font-extrabold cursor-pointer mt-2'}>{question.Hint}</p>
                         {showTranslation && (
                             <p className={'text-lg text-center text-amber-950 mt-3 italic'}>
-                                {language === 'french' ? question.HintTranslationFrench : question.HintTranslation}
+                                {question.HintTranslation}
                             </p>
                         )}
                     </div>

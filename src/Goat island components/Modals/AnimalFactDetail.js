@@ -18,12 +18,11 @@ import IslandBackground from "../Islandgame-images/StartScreenBackground.png";
 import Boy from "../Islandgame-images/boy.png";
 import Girl from "../Islandgame-images/girl.png";
 
-export const AnimalFactDetail = ({animal, Close, onBack, content, language = "english"}) => {
+export const AnimalFactDetail = ({animal, Close, onBack, content}) => {
     const [fact] = useState(() => {
-        // Choose English or French facts based on language
-        const facts = language === 'french' && animal.FactsFrench ? animal.FactsFrench : animal.Facts;
+        const facts = language === animal.Facts;
         if(facts.length === 0){
-            return language === 'french' ? "Aucun fait disponible pour cet animal" : "No facts available for this animal";
+            return "No facts available for this animal";
         }
         const randomFactIndex = Math.floor(Math.random() * facts.length);
         return facts[randomFactIndex];

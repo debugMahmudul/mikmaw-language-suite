@@ -19,26 +19,8 @@ export const Dictionary_Words = Questions.map(q =>{
     return {
         word: correct.Word,                    // Mi'kmaq word 
         english: q.EnglishTranslation,         // English translation 
-        french: getFrenchTranslation(q.EnglishTranslation), // French translation
         img: correct.Image,
         name: correct.name,                    // English animal name
         Facts: correct.Facts,                  // English facts
-        FactsFrench: correct.FactsFrench || [] // French facts
     };
 });
-
-// Helper function to translate animal names to French
-function getFrenchTranslation(englishName) {
-    const translations = {
-        'Deer': 'Cerf',
-        'Fox': 'Renard',
-        'Bunny': 'Lapin',
-        'Bear': 'Ours',
-        'Beaver': 'Castor',
-        'Moose': 'Orignal',
-        'Porcupine': 'Porc-épic',
-        'Raccoon': 'Raton laveur',
-        'Skunk': 'Mouffette'
-    };
-    return translations[englishName] || englishName;
-}

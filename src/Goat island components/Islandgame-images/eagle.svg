@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="230 300 1110 1110">
+  <!-- Cartoon bald eagle (kitpu) for the Goat Island game.
+       Drawn to match the other animal pictures: thick black outline, flat colours.
+       Author: Mahmudul Hasan Hamim -->
+  <g stroke="#111" stroke-width="30" stroke-linejoin="round" stroke-linecap="round">
+    <!-- legs and talons (drawn first so the body covers their tops) -->
+    <path d="M700 1080 L690 1250 L640 1290 M690 1250 L700 1300 M690 1250 L745 1290" fill="none"/>
+    <path d="M820 1080 L815 1250 L765 1290 M815 1250 L825 1300 M815 1250 L870 1290" fill="none"/>
+    <path d="M675 1090 L715 1090 L705 1240 L680 1240 Z" fill="#f2b631"/>
+    <path d="M800 1090 L840 1090 L830 1240 L805 1240 Z" fill="#f2b631"/>
+
+    <!-- white tail fan -->
+    <path d="M930 980 L1270 1150 C1260 1200 1230 1240 1190 1260 L880 1110 Z" fill="#f2e8e1"/>
+    <path d="M1000 1040 L1220 1200 M960 1070 L1150 1240" fill="none" stroke-width="16"/>
+
+    <!-- brown body -->
+    <path d="M610 760 C550 900 590 1110 750 1160 C900 1205 1030 1120 1050 1000 C1070 870 990 720 850 680 C750 652 660 690 610 760 Z" fill="#6b4226"/>
+
+    <!-- folded wing -->
+    <path d="M760 760 C910 735 1060 860 1100 1070 C1010 1050 880 1005 800 925 C755 880 740 815 760 760 Z" fill="#4e2f1a"/>
+    <path d="M870 900 C930 950 990 990 1060 1020 M840 840 C900 880 960 920 1030 950" fill="none" stroke-width="16"/>
+
+    <!-- white head -->
+    <path d="M440 600 C440 490 530 430 620 430 C730 430 800 510 800 610 C800 700 750 760 680 790 C620 815 520 800 480 740 C455 700 440 660 440 600 Z" fill="#f2e8e1"/>
+
+    <!-- hooked yellow beak -->
+    <path d="M470 560 C400 545 330 585 318 655 C315 678 335 690 350 675 C362 650 392 640 425 648 C445 653 462 655 478 648 Z" fill="#f2b631"/>
+  </g>
+
+  <!-- eye and brow -->
+  <circle cx="545" cy="575" r="24" fill="#111"/>
+  <circle cx="553" cy="567" r="7" fill="#fff"/>
+  <path d="M500 535 L600 552" stroke="#111" stroke-width="22" stroke-linecap="round" fill="none"/>
+</svg>

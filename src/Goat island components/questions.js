@@ -11,6 +11,7 @@
  *       - A hint in Mi'kmaq and English
  *       - Animal facts (3 per animal) shown as rewards for correct progress
  * Author: Kimone Barrett (A00454699), Mark Louis Tabudlong A00468931
+ * Eagle (kitpu) added by: Mahmudul Hasan Hamim
  */
 
 import Bear from "./Islandgame-images/bear.png";
@@ -21,7 +22,7 @@ import Fox from "./Islandgame-images/fox.png";
 import Moose from "./Islandgame-images/moose.png";
 import Porcupine from "./Islandgame-images/porcupine.png";
 import Raccoon from "./Islandgame-images/raccoon.png";
-import Skunk from "./Islandgame-images/skunk.png";
+import Eagle from "./Islandgame-images/eagle.svg";
 
 export const Questions = [
     {
@@ -156,7 +157,7 @@ export const Questions = [
                     "Les bois d'un orignal peuvent atteindre 1.8 mètre de largeur.",
                     "Les orignaux peuvent courir jusqu'à 56 km/h ; plus vite que la plupart des gens ne le pensent."
                 ]},
-            {Image: Skunk, isCorrect: false, name: 'Skunk'}
+            {Image: Eagle, isCorrect: false, name: 'Eagle'}
         ],
         Hint: "ugsmu'l",
         HintTranslation: 'antler',
@@ -169,7 +170,7 @@ export const Questions = [
         Word: 'matues',
         Responses: [
             {Image: Moose, isCorrect: false, name:'Moose'},
-            {Image: Skunk, isCorrect: false, name:'Skunk'},
+            {Image: Eagle, isCorrect: false, name: 'Eagle'},
             {Image: Porcupine, isCorrect: true, name: 'Porcupine', Word: 'matues',
                 Facts: [
                     "Porcupines love to climb trees around the island.",
@@ -202,7 +203,7 @@ export const Questions = [
                     "Ils utilisent leurs pattes comme de petites mains pour ouvrir les choses",
                     "Les ratons laveurs explorent la nuit, donc les enfants ne les voient pas souvent pendant la journée."
                 ]},
-            {Image: Skunk, isCorrect: false, name:'Skunk'},
+            {Image: Eagle, isCorrect: false, name: 'Eagle'},
             {Image: Porcupine, isCorrect: false, name: 'Porcupine'}
         ],
         Hint: 'gimiet',
@@ -210,26 +211,27 @@ export const Questions = [
         HintTranslationFrench: 'se faufiler'
     },
     {
+        // Eagle added, as the Eskasoni teachers asked on Oct 27, 2026.
         ID: 8,
-        EnglishTranslation: 'Skunk',
-        Word: 'apikjilu',
+        EnglishTranslation: 'Eagle',
+        Word: 'kitpu',
         Responses: [
             {Image: Moose, isCorrect: false, name:'Moose'},
-            {Image: Skunk, isCorrect: true, name:'Skunk', Word: 'apikjilu',
+            {Image: Eagle, isCorrect: true, name:'Eagle', Word: 'kitpu',
                 Facts: [
-                    "Skunks have a white stripe that warms others to stay back.",
-                    "They only spray when they're scared, not for fun",
-                    "Skunks love to eat bugs! Yummy to them, nasty to us!"
-                ],
-                FactsFrench: [
-                    "Les mouffettes ont une rayure blanche qui avertit les autres de rester à l'écart.",
-                    "Ils ne pulvérisent que lorsqu'ils ont peur, pas pour s'amuser",
-                    "Les mouffettes adorent manger des insectes ! Délicieux pour eux, dégoûtant pour nous !"
+                    "Eagles have super sharp eyes. They can spot a fish from high up in the sky!",
+                    "Eagles build giant nests at the very top of tall trees.",
+                    "A bald eagle is not really bald. Its head is covered in white feathers!"
                 ]},
             {Image: Porcupine, isCorrect: false, name: 'Porcupine'}
         ],
-        Hint: "jijjema'q",
-        HintTranslation: 'smell bad',
-        HintTranslationFrench: 'mauvaise odeur'
+        // The eagle's hint means "flies around": eagle is the only animal in the
+        // game that can fly, so it is an easy clue for young children.
+        // Source: Mi'gmaq/Mi'kmaq Online Talking Dictionary (verb, "he/she/it flies around").
+        // That dictionary uses Listuguj spelling; a teacher at Eskasoni should
+        // confirm the spelling used at the school.
+        Hint: "alaqsing",
+        HintTranslation: 'flies around'
     }
 ]
+

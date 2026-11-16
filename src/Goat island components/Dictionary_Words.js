@@ -38,7 +38,6 @@ function getFrenchTranslation(englishName) {
         'Moose': 'Orignal',
         'Porcupine': 'Porc-épic',
         'Raccoon': 'Raton laveur',
-        'Skunk': 'Mouffette'
     };
     return translations[englishName] || englishName;
 }

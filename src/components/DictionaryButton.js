@@ -2,10 +2,10 @@
  * DictionaryButton.js
  * 
  * Purpose: This component renders a button that opens a modal containing a dictionary
- *          of Mi'kmaq words and their English or French meanings. The button is styled and positioned
+ *          of Mi'kmaq words and their English meanings. The button is styled and positioned
  *          on the page, and clicking it opens the dictionary in a modal.
  * 
- * Author: Tooba Javed (A00468904)
+ * Author: Tooba Javed (A00468904) & Camille Williams 
  */
 
 import { useState } from 'react';
@@ -18,10 +18,8 @@ import DictionaryImage from './images/DictionaryImage.png';
  * Purpose: Renders a button labeled "Dictionary" that, when clicked, opens a modal displaying
  *          Mi'kmaq words with translations in the selected language.
  * 
- * Parameters:
- * - language: The selected language ('english' or 'french') for translations.
  */
-const DictionaryButton = ({ language = 'english' }) => {
+const DictionaryButton = () => {
   // State variable to control the visibility of the dictionary modal
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -51,7 +49,7 @@ const DictionaryButton = ({ language = 'english' }) => {
 
       {/* Conditionally render the DictionaryModal if isModalOpen is true */}
       {isModalOpen && (
-        <DictionaryModal closeModal={() => setIsModalOpen(false)} language={language} />
+        <DictionaryModal closeModal={() => setIsModalOpen(false)} />
       )}
     </section>
     <section className="Dektop-View hidden lg:flex">
@@ -69,7 +67,7 @@ const DictionaryButton = ({ language = 'english' }) => {
 
       {/* Conditionally render the DictionaryModal if isModalOpen is true */}
       {isModalOpen && (
-        <DictionaryModal closeModal={() => setIsModalOpen(false)} language={language} />
+        <DictionaryModal closeModal={() => setIsModalOpen(false)} />
       )}
     </section>
     </div>

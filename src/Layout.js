@@ -16,10 +16,9 @@ import StartGameScreen from "./Goat island components/components/startGameScreen
 
 function Layout() {
   const [selectedMonth, setSelectedMonth] = useState(3);
-  const [selectedLanguage, setSelectedLanguage] = useState(null);
   const [selectedGame, setSelectedGame] = useState(null);
   const [transitionStage, setTransitionStage] = useState('gameSelect');
-  const content = selectedLanguage ? LANGUAGE_CONTENT[selectedLanguage] : LANGUAGE_CONTENT.english;
+  const content = LANGUAGE_CONTENT.english;
 
   // Select Month
   const handleMonthSelect = (value) => {
@@ -27,11 +26,10 @@ function Layout() {
   };
 
   // Select Game at Start Screen
-  const handleGameSelect = (game, language) => {
+  const handleGameSelect = (game) => {
     setTransitionStage('fadingOut');
     setTimeout(() => {
       setSelectedGame(game);
-      setSelectedLanguage(language);
       setTransitionStage('game');
     }, 150);
   };
@@ -39,7 +37,6 @@ function Layout() {
   // Switch to another game
   const handleSwitchGame = () => {
     setSelectedGame(null);
-    setSelectedLanguage(null);
     setTransitionStage('gameSelect');
   };
 
@@ -56,9 +53,6 @@ function Layout() {
   // Green Button (Switch Game)
   const switchGameBtnClass = "bg-gradient-to-b from-green-500 to-green-700 hover:from-green-600 hover:to-green-800 text-white font-bold uppercase text-xs sm:text-sm py-2 px-4 rounded-xl shadow-[0_4px_0_rgb(21,128,61)] border-2 border-green-800 active:shadow-none active:translate-y-[4px] transition-all";
 
-  // Amber Button (Language)
-  const langBtnClass = "bg-gradient-to-b from-amber-400 to-amber-600 hover:from-amber-500 hover:to-amber-700 text-white font-bold uppercase text-xs sm:text-sm py-2 px-4 rounded-xl shadow-[0_4px_0_rgb(180,83,9)] border-2 border-amber-800 active:shadow-none active:translate-y-[4px] transition-all";
-
   // Show main game 
   return (
     <div className="animate-fadeIn">
@@ -70,14 +64,8 @@ function Layout() {
             <button onClick={handleSwitchGame} className={switchGameBtnClass}>
               {content.switchGame}
             </button>
-            <button
-              onClick={() => setSelectedLanguage(selectedLanguage === 'english' ? 'french' : 'english')}
-              className={langBtnClass}
-            >
-              {selectedLanguage === 'english' ? 'French' : 'English'}
-            </button>
           </div>
-          <StartGameScreen language={selectedLanguage} />
+          <StartGameScreen />
         </div>
       )}
 
@@ -87,12 +75,6 @@ function Layout() {
           <div className="fixed top-4 right-4 z-50 flex gap-2">
             <button onClick={handleSwitchGame} className={switchGameBtnClass}>
               {content.switchGame}
-            </button>
-            <button
-              onClick={() => setSelectedLanguage(selectedLanguage === 'english' ? 'french' : 'english')}
-              className={langBtnClass}
-            >
-              {selectedLanguage === 'english' ? 'French' : 'English'}
             </button>
           </div>
 
@@ -115,7 +97,7 @@ function Layout() {
 
               <div className="z-20 flex items-center justify-between mx-[1vw] h-[10vh]">
                 <DropDownMenu selectedMonth={selectedMonth} onMonthChange={handleMonthSelect} />
-                <DictionaryButton language={selectedLanguage} />
+                <DictionaryButton />
               </div>
 
               <div className="flex flex-col items-center justify-center h-[70vh] w-[100vw]">
@@ -125,7 +107,7 @@ function Layout() {
                   className="absolute bottom-[0vh] z-10 object-cover w-[100vw] pointer-events-none"
                 />
                 <div className="absolute bottom-[0.5vh] w-[90vw]">
-                  <WordDistribution month={selectedMonth} language={selectedLanguage} />
+                  <WordDistribution month={selectedMonth} />
                 </div>
               </div>
             </div>
@@ -147,7 +129,7 @@ function Layout() {
               </div>
 
               <div className="z-20 flex flex-col items-center justify-between text-xl w-[60vw] mt-[5vh] h-[25vh]">
-                <DictionaryButton language={selectedLanguage} />
+                <DictionaryButton />
                 <DropDownMenu selectedMonth={selectedMonth} onMonthChange={handleMonthSelect} />
               </div>
 
@@ -158,7 +140,7 @@ function Layout() {
                   className="absolute bottom-[5vh] right-[5vw] z-10 object-cover w-[40vw] pointer-events-none"
                 />
                 <div>
-                  <WordDistribution month={selectedMonth} language={selectedLanguage} />
+                  <WordDistribution month={selectedMonth} />
                 </div>
               </div>
             </div>

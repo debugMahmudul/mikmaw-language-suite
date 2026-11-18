@@ -7,11 +7,15 @@
  *   player to either:
  *     • open the Dictionary to view the newly unlocked word, or
  *     • continue to the next question.
+ *   When the screen opens it plays "kelu'k tela'tekn" (well done) once.
  *
- * Author: Kimone Barrett A00454699, Mark Louis Tabudlong A00468931
+ * Author(s): Kimone Barrett A00454699, Mark Louis Tabudlong A00468931,
+ *            Mahmudul Hasan Hamim A00466507 (right-answer sound)
  */
 
 import { useState } from "react";
+import { useWordAudio } from "../../hooks/useWordAudio";
+import { CORRECT_ANSWER_SOUND } from "../wordAudio";
 import { GiPawPrint } from "react-icons/gi";
 import Boy from "../Islandgame-images/boy.png";
 import Scroll from "../Islandgame-images/DictionaryBackground.png";
@@ -20,6 +24,9 @@ import Dictionary from "./dictionary";
 
 const AnsweredCorrectly = ({response, nextQuestion, content, language}) =>{
     const [openDictModal, setOpenDictModal] = useState(false)
+
+    // Plays "kelu'k tela'tekn" once when this screen opens (and stops if the child moves on quickly).
+    useWordAudio(CORRECT_ANSWER_SOUND);
 
     // function handleCorrectAnswerContinue(){}
     if(openDictModal) {

@@ -6,15 +6,22 @@
  *   It also tells the player how many attempts remain and provides two actions:
  *      • "Get Hint" – requests a hint from the parent component.
  *      • "Try Again" – closes the modal and returns to the question.
+ *   When the screen opens it plays "ktnu'kwalsi ap" (try again) once.
  *
- * Author: Kimone Barrett A00454699, Mark Louis Tabudlong A00468931
+ * Author(s): Kimone Barrett A00454699, Mark Louis Tabudlong A00468931,
+ *            Mahmudul Hasan Hamim A00466507 (wrong-answer sound)
  */
 
+import { useWordAudio } from "../../hooks/useWordAudio";
+import { TRY_AGAIN_SOUND } from "../wordAudio";
 import Scroll from "../Islandgame-images/DictionaryBackground.png";
 import IslandBackground from "../Islandgame-images/StartScreenBackground.png";
 import Girl from "../Islandgame-images/girl.png";
 
 const IncorrectAnswer = ({getHintFunction, attempts, close, content}) => {
+
+    // Plays "ktnu'kwalsi ap" once when this screen opens (and stops if the child moves on quickly).
+    useWordAudio(TRY_AGAIN_SOUND);
 
     return (
         <div className={'absolute inset-0 flex w-full h-screen justify-center items-center'}>

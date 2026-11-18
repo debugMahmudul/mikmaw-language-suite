@@ -3,7 +3,7 @@
  *
  * Purpose:
  *   Links each Mi'kmaw animal word and hint word in the Goat Island game to
- *   its Audio Recording.
+ *   its Audio Recording, and holds the right / wrong answer sound effects.
  *   The game looks up a question's Word here to find the sound to play
  *   (requirement [GI-AUD-01]).
  *
@@ -38,6 +38,9 @@ import HintAntler from "./audio/placeholder/hint-antler.wav";
 import HintSharp from "./audio/placeholder/hint-sharp.wav";
 import HintSneak from "./audio/placeholder/hint-sneak.wav";
 import HintFlies from "./audio/placeholder/hint-flies.wav";
+
+import CorrectAnswerSound from "../components/audio/congratulatory.mp3";
+import TryAgainSound from "../components/audio/tryagain.mp3";
 
 // Global constant: the Audio Recording for each Mi'kmaw animal word.
 // The key must match the question's "Word" in questions.js exactly
@@ -90,4 +93,12 @@ export const HINT_AUDIO = {
 export function getHintAudio(hint) {
     return HINT_AUDIO[hint] ?? null;
 }
+
+// Global constants: the sound effects for the answer screens.
+// These are REAL recordings of a Mi'kmaw speaker, shared with the Pictionary
+// game (not placeholders). Checked Nov 18: they say the client's phrases.
+//   CORRECT_ANSWER_SOUND = "kelu'k tela'tekn" (well done)  - Correct! screen
+//   TRY_AGAIN_SOUND      = "ktnu'kwalsi ap"   (try again)  - Incorrect screen
+export const CORRECT_ANSWER_SOUND = CorrectAnswerSound;
+export const TRY_AGAIN_SOUND = TryAgainSound;
 

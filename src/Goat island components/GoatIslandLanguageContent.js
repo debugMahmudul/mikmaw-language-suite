@@ -3,7 +3,8 @@
  * 
  * Purpose: Provides English translations for all text in the Goat Island game
  * 
- * Author: Mark Louis Tabudlong A00468931
+ * Author(s): Mark Louis Tabudlong A00468931,
+ *            Mahmudul Hasan Hamim A00466507 (hint text: tap instead of hover)
  */
 
 export const GOAT_ISLAND_LANGUAGE = {
@@ -40,9 +41,9 @@ export const GOAT_ISLAND_LANGUAGE = {
     
     // HintsComponent
     yourHint: "hi'lewei alo'tasit",  
-    yourHintEnglish: "(Votre Indice)", 
-    hoverTranslation: "Hover to see translation!",
-    hoverEnglish: "Hover to view English Translation",
+    yourHintEnglish: "(Your Hint)",
+    tapTranslation: "Tap to see translation!",
+    tapEnglish: "Tap the word to view English Translation",
     hintsRemaining: "You have {numHints} hints remaining",
     gotIt: "Got it",
     
@@ -72,3 +73,4 @@ export const GOAT_ISLAND_LANGUAGE = {
     animalsOfIslandLabel: "Animals of the Island 🦌"
   }
 };
+

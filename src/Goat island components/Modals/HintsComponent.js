@@ -3,13 +3,18 @@
  *
  * Purpose:
  *   Displays the hint modal when a player answers incorrectly and chooses the "Get Hint" option.
- *   This component provides the Mi'kmaq hint word and reveals the English translation on hover.
+ *   This component provides the Mi'kmaq hint word and plays its Audio Recording.
+ *   Tapping the hint word plays it again and shows / hides the English translation
+ *   (a tap works on tablets, where hover does not).
  *   It visually reinforces learning while helping young players progress through the game.
  *
- * Author: Kimone Barrett A00454699, Mark Louis Tabudlong A00468931
+ * Author(s): Kimone Barrett A00454699, Mark Louis Tabudlong A00468931,
+ *            Mahmudul Hasan Hamim A00466507 (hint audio, tap instead of hover)
  */
 
 import { useState } from "react";
+import { useWordAudio } from "../../hooks/useWordAudio";
+import { getHintAudio } from "../wordAudio";
 import BirchPaper from '../Islandgame-images/BirchPaper.png';
 import ChatBubble from '../Islandgame-images/ChatBubble.png';
 import Girl from '../Islandgame-images/girl.png';
@@ -18,11 +23,14 @@ import IslandBackground from '../Islandgame-images/StartScreenBackground.png';
 const HintsComponent = ({close, question, numHints, content, language = "english"}) =>{
     const [showTranslation, setShowTranslation] = useState(false);
 
-    const handleMouseOver = () =>{
-        setShowTranslation(true);
-    }
-    const handleMouseOut = () => {
-        setShowTranslation(false);
+    // Plays the hint word once when the hint screen opens; playHint() replays it.
+    const playHint = useWordAudio(getHintAudio(question.Hint));
+
+    // One tap: hear the hint word again and show the English.
+    // Next tap: hear it again and hide the English.
+    const handleHintTap = () => {
+        playHint();
+        setShowTranslation((shown) => !shown);
     }
 
     return (
@@ -30,14 +38,17 @@ const HintsComponent = ({close, question, numHints, content, language = "english
             <div className={'inset-0 absolute z-0 w-full h-screen bg-center bg-no-repeat bg-cover'}
                  style={{backgroundImage: `url(${IslandBackground})`}}></div>
 
-            <div>
+            {/* pointer-events-none: the girl and her speech bubble are only decoration.
+                On narrow (portrait tablet) screens the bubble sits on top of the hint word,
+                so without this it would catch the tap and the hint word would not respond. */}
+            <div className="pointer-events-none">
                 <img src={Girl} alt="Girl" className="size-96 -left-10 absolute animate-bounce" />
                 <img
                     src={ChatBubble}
                     alt="ChatBubble"
                     className="absolute h-36 w-80 left-48 top-96 z-20"/>
                 <p className="absolute left-48 top-96 h-36 w-72 flex items-center justify-center z-30 font-bold text-center">
-                    {content.hoverTranslation}
+                    {content.tapTranslation}
                 </p>
             </div>
 
@@ -51,15 +62,18 @@ const HintsComponent = ({close, question, numHints, content, language = "english
                 </div>
                 {/*DISPLAY HINTS*/}
                 <div className={'flex flex-col items-center flex-grow justify-center -mt-1'}>
-                    <p className={'text-sm italic text-amber-800'}>{content.hoverEnglish}</p>
-                    <div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-                        <p className={'text-6xl text-amber-950 font-extrabold cursor-pointer mt-2'}>{question.Hint}</p>
+                    <p className={'text-sm italic text-amber-800'}>{content.tapEnglish}</p>
+                    <button type="button" onClick={handleHintTap} data-cy="hint-word"
+                            aria-pressed={showTranslation}
+                            className={'flex flex-col items-center bg-transparent border-0 p-0'}>
+                        <span className={'text-6xl text-amber-950 font-extrabold cursor-pointer mt-2'}>{question.Hint}</span>
+                        {/* Client rule: the English must stay SMALLER than the Mi'kmaw word (text-lg vs text-6xl). */}
                         {showTranslation && (
-                            <p className={'text-lg text-center text-amber-950 mt-3 italic'}>
+                            <span data-cy="hint-translation" className={'text-lg text-center text-amber-950 mt-3 italic'}>
                                 {question.HintTranslation}
-                            </p>
+                            </span>
                         )}
-                    </div>
+                    </button>
                     <div className={'flex flex-col items-center w-full mt-2'}>
                         <p className={'text-lg text-amber-950 mb-4'}>
                             {content.hintsRemaining.replace('{numHints}', numHints)}
